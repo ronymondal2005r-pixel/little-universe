@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100d2b">
+<title>Our Little Universe ✦</title>
+<style>
+:root{--night:#100d2b;--night2:#21143d;--pink:#ffb8d4;--lav:#cbbcff;--gold:#f4d49a;--white:#fff5fb}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 50% 0%,#382052 0%,#17122f 42%,#0c0b20 100%);color:var(--white);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}
+#stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+.star{position:absolute;border-radius:50%;background:#fff;box-shadow:0 0 8px 2px #fff8;animation:twinkle 3s ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:.25;transform:scale(.7)}to{opacity:1;transform:scale(1.25)}}
+nav{position:fixed;z-index:5;top:0;left:0;right:0;display:flex;justify-content:center;gap:clamp(12px,4vw,35px);padding:16px 10px;background:#100d2bcc;backdrop-filter:blur(12px);border-bottom:1px solid #ffffff16}
+nav a{color:#eadcf4;text-decoration:none;font:10px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+nav a:hover{color:var(--pink)}
+section{position:relative;z-index:1;padding:100px 20px;max-width:1000px;margin:auto}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding-top:110px}
+.eyebrow{font:10px Arial,sans-serif;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+h1{font-size:clamp(48px,10vw,100px);font-weight:normal;line-height:.98;margin:20px 0 12px;background:linear-gradient(100deg,#fff1f7,#ffb8d4,#cbbcff);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 35px #eaa8dd22}
+.hero p{max-width:560px;color:#d9c9e7;font-size:clamp(15px,2.5vw,19px);line-height:1.8}
+.date{color:var(--gold);font:12px Arial,sans-serif;letter-spacing:.3em;margin-top:20px}
+.universe{width:min(620px,90vw);height:220px;position:relative;margin:22px auto 10px}
+.universe svg{width:100%;height:100%;overflow:visible}
+.star-label{position:absolute;font:italic 17px Georgia;color:#ffe5f0;text-shadow:0 0 14px #ffacd6;white-space:nowrap}
+.star-label.left{left:5%;top:48%}.star-label.right{right:4%;top:48%}
+.scroll{margin-top:35px;color:#bfaed0;font:10px Arial,sans-serif;letter-spacing:.22em}
+h2{font-size:clamp(32px,6vw,54px);font-weight:normal;text-align:center;margin:0 0 14px;color:#ffe5f0}
+.lead{text-align:center;color:#c9bad9;line-height:1.8;max-width:650px;margin:0 auto 42px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:linear-gradient(145deg,#ffffff12,#ffffff06);border:1px solid #ffffff20;border-radius:18px;padding:23px 20px;min-height:185px;box-shadow:0 15px 45px #0002}
+.card .icon{font-size:27px}.card h3{font-size:20px;font-weight:normal;color:#ffd6e7;margin:13px 0 8px}.card p{font-size:14px;line-height:1.7;color:#d4c6df;margin:0}
+.timeline{max-width:650px;margin:auto;border-left:1px solid #e5b3d566;padding-left:28px}
+.event{position:relative;margin:0 0 28px;padding:0 0 5px}
+.event:before{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:var(--pink);left:-33px;top:6px;box-shadow:0 0 15px var(--pink)}
+.event small{font:10px Arial,sans-serif;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.event h3{font-size:22px;font-weight:normal;color:#ffe2ef;margin:8px 0}
+.event p{color:#d1c2dd;line-height:1.75;margin:0}
+.constellation-box{max-width:720px;margin:auto;padding:30px 22px;border:1px solid #e9c4e044;border-radius:22px;background:linear-gradient(135deg,#ffffff0c,#ffffff04);text-align:center}
+.constellation-box .big{font-size:42px;color:var(--pink);text-shadow:0 0 25px #ffacd6}
+.constellation-box p{line-height:1.9;color:#e0d2e9}
+.promise{font-style:italic;font-size:clamp(19px,3vw,25px);color:#ffd8e9}
+footer{text-align:center;position:relative;z-index:1;padding:35px 15px 55px;color:#b8a6ca;font:10px Arial,sans-serif;letter-spacing:.2em}
+button{background:transparent;border:1px solid #f2bfd8aa;color:#ffe5f0;border-radius:30px;padding:12px 20px;font:11px Arial,sans-serif;letter-spacing:.12em;cursor:pointer;margin-top:14px}
+button:hover{background:#f6c7df18}
+#surprise{display:none;margin:24px auto 0;max-width:500px;padding:22px;border-radius:16px;background:#ffffff10;border:1px solid #ffffff24;color:#ffe5f0;line-height:1.8}
+@media(max-width:680px){.grid{grid-template-columns:1fr}.card{min-height:0}nav{gap:13px}nav a{font-size:9px}.star-label{font-size:14px}.universe{height:180px}}
+</style>
+</head>
+<body>
+<div id="stars"></div>
+<nav><a href="#beginning">Beginning</a><a href="#moments">Little moments</a><a href="#dreams">Someday</a><a href="#promise">A promise</a></nav>
+<section class="hero" id="top">
+ <div class="eyebrow">A tiny corner of the universe </div>
+ <h1>Our Little<br>Universe</h1>
+ <p>Somewhere between one message and a thousand conversations, two lives found a little more light.</p>
+ <div class="date">09 · 12 · 2025</div>
+ <div class="universe">
+  <svg viewBox="0 0 620 220" role="img" aria-label="Two glowing stars connected by a heart-shaped constellation">
+   <defs><filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+   <path d="M85 112 C165 30 225 188 310 105 C395 22 455 190 535 112" fill="none" stroke="#e9b9ff" stroke-width="1.4" stroke-dasharray="3 7" opacity=".8"/>
+   <path d="M310 105 C275 63 250 85 275 110 C290 125 310 140 310 140 C310 140 330 125 345 110 C370 85 345 63 310 105Z" fill="none" stroke="#ffb8d4" stroke-width="2" filter="url(#glow)"/>
+   <circle cx="85" cy="112" r="8" fill="#fff4fb" filter="url(#glow)"/><circle cx="535" cy="112" r="8" fill="#fff4fb" filter="url(#glow)"/>
+   <g fill="#fff"><circle cx="165" cy="70" r="2"/><circle cx="220" cy="148" r="2"/><circle cx="400" cy="68" r="2"/><circle cx="455" cy="150" r="2"/><circle cx="310" cy="30" r="2"/></g>
+  </svg>
+  <div class="star-label left">You</div><div class="star-label right">Tharuu</div>
+ </div>
+ <div class="scroll">SCROLL THROUGH OUR LITTLE UNIVERSE ↓</div>
+</section>
+<section id="beginning">
+ <h2>Where it all began</h2>
+ <p class="lead">It wasn't a place we stood together. It was a little hello on a screen — and somehow, it became the beginning of something precious.</p>
+ <div class="constellation-box">
+  <div class="big">✦ ♡ ✦</div>
+  <p>On <strong>9 December 2025</strong>, we connected on Instagram. Two different days, two different routines, and one conversation that opened a whole new little universe.</p>
+  <div class="date">THE FIRST PAGE OF OUR STORY</div>
+ </div>
+</section>
+<section id="moments">
+ <h2>Little things, big feelings</h2>
+ <p class="lead">The moments don't have to be grand to become favourites. Sometimes the smallest things are the ones we keep closest.</p>
+ <div class="grid">
+  <div class="card"><div class="icon">☾</div><h3>Our conversations</h3><p>Little updates, long talks, random stories and the comfort of knowing there's someone to tell.</p></div>
+  <div class="card"><div class="icon">🌷</div><h3>Flowers for you</h3><p>Roses, tulips and lavender — a little reminder that beauty can travel across any distance.</p></div>
+  <div class="card"><div class="icon">⛏</div><h3>Our adventures</h3><p>Building, exploring and making our own memories, one little Minecraft world at a time.</p></div>
+ </div>
+</section>
+<section id="dreams">
+ <h2>Someday, in our universe</h2>
+ <p class="lead">A few stars we're still wishing on. No rush — just lovely things to look forward to, together.</p>
+ <div class="timeline">
+  <div class="event"><small>One day</small><h3>A proper day together</h3><p>No countdowns or screens — just time together, silly laughs and a memory we can hold.</p></div>
+  <div class="event"><small>Somewhere beautiful</small><h3>A flower-filled adventure</h3><p>Walking among flowers, choosing a bouquet and taking far too many pictures.</p></div>
+  <div class="event"><small>Always</small><h3>More little traditions</h3><p>Our songs, jokes, celebrations and tiny rituals that feel like they're ours alone.</p></div>
+ </div>
+</section>
+<section id="promise">
+ <h2>One little promise</h2>
+ <div class="constellation-box">
+  <div class="big">♡</div>
+  <p class="promise">“No matter how many miles sit between our screens, I'll keep making room for you in my days — with patience, honesty, laughter and love.”</p>
+  <p>Thank you for becoming one of the brightest parts of my universe, Tharuu.</p>
+  <button id="reveal">A tiny surprise for you ✦</button>
+  <div id="surprise">If I could send you one thing through the stars, it would be a hug that lasts until we can meet again. Until then, here's a little piece of my heart. ♡</div>
+ </div>
+</section>
+<footer></footer>
+<script>
+const layer=document.getElementById('stars');
+for(let i=0;i<125;i++){const s=document.createElement('i');s.className='star';const size=Math.random()*2.5+1;s.style.width=size+'px';s.style.height=size+'px';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=(Math.random()*4)+'s';s.style.animationDuration=(2+Math.random()*4)+'s';layer.appendChild(s)}
+document.getElementById('reveal').addEventListener('click',()=>{const box=document.getElementById('surprise');box.style.display=box.style.display==='block'?'none':'block'});
+</script>
+</body>
+</html>
